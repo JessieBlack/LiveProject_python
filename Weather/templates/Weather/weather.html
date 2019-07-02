@@ -1,0 +1,49 @@
+<head>
+        <link rel="stylesheet" href="../static/css/Weather.css">
+        
+    </head>
+    {% extends "base.html" %}
+    {% block content %}
+    {% include "nav.html" %}
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    What is the weather like?
+                </h1>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-offset-4 is-4">
+                    <!--form that allows user to choose a city and see the current weather in the city-->
+                    <form method="POST">
+                        {% csrf_token %}
+                            <div class="field has-addons">
+                                <div class="control is-expanded">
+                                    <input class="input" type="text" placeholder="City Name" name="City_Name">
+                                    {% csrf_token %}
+                                </div>
+                            <button type="submit" id="weathersearch">Search Weather</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="contain">
+            <section>
+                <ul> <!--shows the city and country of user's choosing and the weather, temperature, and wind speed of said Location-->
+                    <li>City: {{ city_weather.location }} {{ city_weather.country }}</li>
+                    <li>Weather: {{ city_weather.weather }}</li>
+                    <li>Temperature: {{ city_weather.temperature }} ° F</li>
+                    <li>Wind Speed: {{ city_weather.wind_speed }}</li>
+
+                </ul>
+            </section>
+        </div>
+    </section>
+    <p class="enjoy">Enjoy your trip!</p> <!--° F-->
+    <p></p>
+    {% endblock %}
