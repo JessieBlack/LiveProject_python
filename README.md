@@ -1,2 +1,2 @@
 # LiveProject_python
-Python Live Project code
+Codes for the two stories that I completed for the Python Live Project, Weather Application API and the login/logout story. Weather app allows for users to choose any city from the globe and returns the current weather, wind speed, location, and a description of the weather. The login/logout story has a link on the navigation bar for users to login and it will tell them if they are not logged in. On the login page, if the user is authenticated, it will bring them back to the homepage so that they can explore the site.
